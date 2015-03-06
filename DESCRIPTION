@@ -1,0 +1,23 @@
+Package: distributeRF
+Type: Package
+Title: Distribute and combine random forest results
+Version: 0.1
+Date: 2015-03-06
+Author: John Ehrlinger <john.ehrlinger@gmail.com>
+Maintainer: John Ehrlinger <john.ehrlinger@gmail.com>
+License: GPL (>=3)
+VignetteBuilder: knitr
+URL: https://github.com/ehrlinger/distributeRF
+BugReports: https://github.com/ehrlinger/distributeRF/issues
+Description:  Splitting and merging random Forest analysis using the randomForestSRC package for survival, regression and
+  classification forests.
+Depends:
+    R (>= 3.1.0)
+Imports:
+    randomForestSRC (>= 1.6.0)
+Suggests:
+    testthat,
+    knitr,
+    tidyr,
+    dplyr,
+    ggRandomForests

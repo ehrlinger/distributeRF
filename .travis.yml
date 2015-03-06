@@ -1,0 +1,30 @@
+# Sample .travis.yml for R projects.
+#
+# See README.md for instructions, or for more configuration options,
+# see the wiki:
+#   https://github.com/craigcitro/r-travis/wiki
+
+language: r
+
+env:
+   global:
+     - CRAN: http://cran.rstudio.com
+     - R_BUILD_ARGS="--no-build-vignettes --no-manual"
+     - R_CHECK_ARGS="--no-build-vignettes --no-manual --as-cran"
+     - BOOTSTRAP_LATEX=""
+
+apt_packages:
+ - texlive-full
+ 
+# For code coverage
+r_github_packages:
+  - ehrlinger/randomForestSRC
+  - jimhester/covr
+
+after_success:
+  - Rscript -e 'covr::coveralls()'
+  
+notifications:
+  email:
+    on_success: change
+    on_failure: change
